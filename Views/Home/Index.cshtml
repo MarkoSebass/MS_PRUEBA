@@ -1,0 +1,69 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Panel de tareas";
+}
+
+<section class="hero-panel">
+    <div>
+        <p class="eyebrow">ESPACIO DE TRABAJO</p>
+        <h1>Convierte tus pendientes en <span>avance visible.</span></h1>
+        <p class="hero-copy">Un panel sencillo para organizar lo que importa, revisar el ritmo y mantener el foco.</p>
+    </div>
+    <div class="hero-mark" aria-hidden="true">M/</div>
+</section>
+
+<section class="stats-grid" aria-label="Resumen de tareas">
+    <article class="stat-card"><span>Total</span><strong>@Model.TotalTasks</strong><small>tareas creadas</small></article>
+    <article class="stat-card"><span>En curso</span><strong>@Model.PendingTasks</strong><small>pendientes</small></article>
+    <article class="stat-card accent"><span>Completado</span><strong>@Model.CompletionPercentage%</strong><small>@Model.CompletedTasks finalizadas</small></article>
+</section>
+
+<section class="workspace-grid">
+    <div class="task-section">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">SEGUIMIENTO</p>
+                <h2>Tus tareas</h2>
+            </div>
+            <span class="task-count">@Model.PendingTasks abiertas</span>
+        </div>
+        <div class="task-list">
+            @foreach (var task in Model.Tasks)
+            {
+                <article class="task-row @(task.IsCompleted ? "is-complete" : string.Empty)">
+                    <form asp-controller="Tasks" asp-action="Toggle" method="post">
+                        <input type="hidden" name="id" value="@task.Id" />
+                        <button class="task-check" type="submit" aria-label="@(task.IsCompleted ? "Reabrir" : "Completar") tarea">@(task.IsCompleted ? "✓" : "")</button>
+                    </form>
+                    <div class="task-content">
+                        <h3>@task.Title</h3>
+                        <p>@task.Description</p>
+                    </div>
+                    <time datetime="@task.DueDate.ToString("yyyy-MM-dd")">@task.DueDate.ToString("dd MMM")</time>
+                </article>
+            }
+        </div>
+    </div>
+    <aside class="create-panel">
+        <p class="eyebrow">NUEVA TAREA</p>
+        <h2>Agrega el siguiente paso</h2>
+        @if (TempData["Success"] is string success)
+        {
+            <div class="alert success">@success</div>
+        }
+        @if (TempData["Error"] is string error)
+        {
+            <div class="alert error">@error</div>
+        }
+        <form asp-controller="Tasks" asp-action="Create" method="post" class="task-form">
+            <label for="title">Nombre</label>
+            <input id="title" name="title" type="text" placeholder="Ej. Revisar propuesta" maxlength="120" required />
+            <label for="description">Descripción</label>
+            <textarea id="description" name="description" rows="3" maxlength="300" placeholder="¿Qué debe quedar listo?"></textarea>
+            <label for="dueDate">Fecha límite</label>
+            <input id="dueDate" name="dueDate" type="date" value="@DateTime.Today.AddDays(1).ToString("yyyy-MM-dd")" required />
+            <button class="primary-button" type="submit">Crear tarea <span>→</span></button>
+        </form>
+    </aside>
+</section>
+</div>
