@@ -10,10 +10,12 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-MsPrueba-fe0c1972-fc6a-485f-a418-91947010523c")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("MsPrueba")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ba1d626f896a2febc75f2392ca4902d0b2cb3dfc")]
 [assembly: System.Reflection.AssemblyProductAttribute("MsPrueba")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MsPrueba")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,69 +1,43 @@
-﻿@model HomeViewModel
-@{
-    ViewData["Title"] = "Panel de tareas";
+﻿@{
+    ViewData["Title"] = "Inicio";
 }
 
-<section class="hero-panel">
-    <div>
-        <p class="eyebrow">ESPACIO DE TRABAJO</p>
-        <h1>Convierte tus pendientes en <span>avance visible.</span></h1>
-        <p class="hero-copy">Un panel sencillo para organizar lo que importa, revisar el ritmo y mantener el foco.</p>
-    </div>
-    <div class="hero-mark" aria-hidden="true">M/</div>
-</section>
-
-<section class="stats-grid" aria-label="Resumen de tareas">
-    <article class="stat-card"><span>Total</span><strong>@Model.TotalTasks</strong><small>tareas creadas</small></article>
-    <article class="stat-card"><span>En curso</span><strong>@Model.PendingTasks</strong><small>pendientes</small></article>
-    <article class="stat-card accent"><span>Completado</span><strong>@Model.CompletionPercentage%</strong><small>@Model.CompletedTasks finalizadas</small></article>
-</section>
-
-<section class="workspace-grid">
-    <div class="task-section">
-        <div class="section-heading">
-            <div>
-                <p class="eyebrow">SEGUIMIENTO</p>
-                <h2>Tus tareas</h2>
-            </div>
-            <span class="task-count">@Model.PendingTasks abiertas</span>
-        </div>
-        <div class="task-list">
-            @foreach (var task in Model.Tasks)
-            {
-                <article class="task-row @(task.IsCompleted ? "is-complete" : string.Empty)">
-                    <form asp-controller="Tasks" asp-action="Toggle" method="post">
-                        <input type="hidden" name="id" value="@task.Id" />
-                        <button class="task-check" type="submit" aria-label="@(task.IsCompleted ? "Reabrir" : "Completar") tarea">@(task.IsCompleted ? "✓" : "")</button>
-                    </form>
-                    <div class="task-content">
-                        <h3>@task.Title</h3>
-                        <p>@task.Description</p>
-                    </div>
-                    <time datetime="@task.DueDate.ToString("yyyy-MM-dd")">@task.DueDate.ToString("dd MMM")</time>
-                </article>
-            }
+<section class="hero-section">
+    <div class="hero-copy">
+        <span class="eyebrow">ASP.NET MVC · ESPACIO DE TRABAJO</span>
+        <h1>Construye algo <span>importante.</span></h1>
+        <p>Una base moderna para crear tu aplicación, proteger tus usuarios y hacer crecer tus ideas.</p>
+        <div class="hero-actions">
+            <a class="btn btn-primary" asp-area="Identity" asp-page="/Account/Register">Crear cuenta</a>
+            <a class="btn btn-outline-primary" asp-area="Identity" asp-page="/Account/Login">Iniciar sesión</a>
         </div>
     </div>
-    <aside class="create-panel">
-        <p class="eyebrow">NUEVA TAREA</p>
-        <h2>Agrega el siguiente paso</h2>
-        @if (TempData["Success"] is string success)
-        {
-            <div class="alert success">@success</div>
-        }
-        @if (TempData["Error"] is string error)
-        {
-            <div class="alert error">@error</div>
-        }
-        <form asp-controller="Tasks" asp-action="Create" method="post" class="task-form">
-            <label for="title">Nombre</label>
-            <input id="title" name="title" type="text" placeholder="Ej. Revisar propuesta" maxlength="120" required />
-            <label for="description">Descripción</label>
-            <textarea id="description" name="description" rows="3" maxlength="300" placeholder="¿Qué debe quedar listo?"></textarea>
-            <label for="dueDate">Fecha límite</label>
-            <input id="dueDate" name="dueDate" type="date" value="@DateTime.Today.AddDays(1).ToString("yyyy-MM-dd")" required />
-            <button class="primary-button" type="submit">Crear tarea <span>→</span></button>
-        </form>
-    </aside>
+    <div class="hero-visual" aria-hidden="true">
+        <div class="visual-card visual-card-back"></div>
+        <div class="visual-card visual-card-front">
+            <span class="visual-label">PROGRESO</span>
+            <strong>01</strong>
+            <div class="progress"><div class="progress-bar" style="width: 72%"></div></div>
+            <small>Tu próximo gran paso</small>
+        </div>
+    </div>
+</section>
+
+<section class="feature-grid" aria-label="Características">
+    <article class="feature-item">
+        <span class="feature-number">01</span>
+        <h2>Ordena tus ideas</h2>
+        <p>Un punto de partida claro para transformar conceptos en funcionalidades.</p>
+    </article>
+    <article class="feature-item feature-highlight">
+        <span class="feature-number">02</span>
+        <h2>Protege el acceso</h2>
+        <p>Identity ya está conectado para que puedas trabajar con cuentas reales.</p>
+    </article>
+    <article class="feature-item">
+        <span class="feature-number">03</span>
+        <h2>Crece sin límites</h2>
+        <p>La estructura MVC queda lista para agregar modelos, vistas y controladores.</p>
+    </article>
 </section>
 </div>
