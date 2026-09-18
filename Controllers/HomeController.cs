@@ -1,15 +1,14 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using MsPrueba.Models;
-using MsPrueba.Services;
 
 namespace MsPrueba.Controllers;
 
-public class HomeController(TaskService taskService) : Controller
+public class HomeController : Controller
 {
     public IActionResult Index()
     {
-        return View(new HomeViewModel { Tasks = taskService.GetAll() });
+        return View();
     }
 
     public IActionResult Privacy()
