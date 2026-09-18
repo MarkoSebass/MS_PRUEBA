@@ -35,7 +35,7 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container site-content">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -43,8 +43,34 @@
 
     <footer class="site-footer">
         <div class="container">
-            <span>&copy; 2026 MsPrueba</span>
-            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacidad</a>
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a class="footer-logo" asp-area="" asp-controller="Home" asp-action="Index">
+                        <span class="brand-icon">M</span>
+                        <span>MsPrueba</span>
+                    </a>
+                    <p>Una base clara y segura para convertir tus ideas en productos digitales.</p>
+                </div>
+                <div class="footer-column">
+                    <h2>Explora</h2>
+                    <a asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+                    <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacidad</a>
+                </div>
+                <div class="footer-column">
+                    <h2>Tu cuenta</h2>
+                    <a asp-area="Identity" asp-page="/Account/Login">Iniciar sesión</a>
+                    <a asp-area="Identity" asp-page="/Account/Register">Crear cuenta</a>
+                </div>
+                <div class="footer-contact">
+                    <span class="footer-kicker">EMPIEZA HOY</span>
+                    <p>Tu próximo proyecto merece un buen comienzo.</p>
+                    <a class="footer-cta" asp-area="Identity" asp-page="/Account/Register">Crear mi cuenta <span aria-hidden="true">↗</span></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 MsPrueba. Todos los derechos reservados.</span>
+                <span class="footer-status"><span aria-hidden="true"></span> Sistema disponible</span>
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

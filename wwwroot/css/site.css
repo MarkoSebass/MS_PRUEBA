@@ -12,7 +12,7 @@
 }
 
 html { font-size: 16px; min-height: 100%; position: relative; }
-body { min-height: 100vh; margin: 0 0 76px; background: var(--color-bg); color: var(--color-text); font-family: 'Segoe UI', system-ui, sans-serif; }
+body { min-height: 100vh; margin: 0; display: flex; flex-direction: column; background: var(--color-bg); color: var(--color-text); font-family: 'Segoe UI', system-ui, sans-serif; }
 h1, h2, h3, .navbar-brand { color: var(--color-dark); font-weight: 700; letter-spacing: -.035em; }
 a { color: var(--color-primary); }
 a:hover { color: #1D4ED8; }
@@ -30,6 +30,7 @@ a:hover { color: #1D4ED8; }
 .logout-link { border: 0; background: transparent; }
 
 .hero-section { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(300px, .95fr); align-items: center; gap: 70px; min-height: 570px; padding: 66px 0 72px; }
+.site-content { flex: 1 0 auto; }
 .eyebrow { display: inline-block; margin-bottom: 17px; color: var(--color-teal); font-size: .72rem; font-weight: 800; letter-spacing: .16em; }
 .hero-copy h1 { max-width: 660px; margin: 0; font-size: clamp(3rem, 6vw, 5.65rem); line-height: .98; }
 .hero-copy h1 span { color: var(--color-primary); }
@@ -76,10 +77,24 @@ main .card { border: 1px solid var(--color-border); border-radius: 12px; box-sha
 .text-danger { color: #DC2626 !important; }
 .text-muted { color: var(--color-muted) !important; }
 
-.site-footer { position: absolute; bottom: 0; width: 100%; min-height: 76px; padding: 27px 0; border-top: 1px solid var(--color-border); background: var(--color-white); color: var(--color-muted); font-size: .83rem; }
-.site-footer .container { display: flex; justify-content: space-between; gap: 20px; }
-.site-footer a { color: var(--color-teal); font-weight: 600; text-decoration: none; }
-.site-footer a:hover { text-decoration: underline; }
+.site-footer { margin-top: auto; padding: 52px 0 22px; background: var(--color-dark); color: #CBD5E1; font-size: .86rem; }
+.footer-main { display: grid; grid-template-columns: 1.5fr .7fr .8fr 1.35fr; gap: 48px; padding-bottom: 42px; }
+.footer-logo { display: inline-flex; align-items: center; gap: 10px; color: var(--color-white); font-size: 1.1rem; font-weight: 700; letter-spacing: -.035em; text-decoration: none; }
+.footer-logo:hover { color: var(--color-white); }
+.footer-brand p { max-width: 260px; margin: 18px 0 0; color: #94A3B8; line-height: 1.65; }
+.footer-column { display: flex; flex-direction: column; gap: 11px; }
+.footer-column h2 { margin: 3px 0 9px; color: var(--color-white); font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; }
+.footer-column a { color: #94A3B8; text-decoration: none; transition: color .2s ease, transform .2s ease; }
+.footer-column a:hover { color: var(--color-white); transform: translateX(3px); }
+.footer-contact { padding: 20px 22px; border: 1px solid rgba(255, 255, 255, .13); border-radius: 12px; background: rgba(255, 255, 255, .05); }
+.footer-kicker { color: var(--color-coral); font-size: .68rem; font-weight: 800; letter-spacing: .15em; }
+.footer-contact p { margin: 12px 0 18px; color: var(--color-white); font-weight: 600; line-height: 1.45; }
+.footer-cta { display: inline-flex; align-items: center; gap: 8px; color: #93C5FD; font-weight: 700; text-decoration: none; }
+.footer-cta:hover { color: var(--color-white); }
+.footer-cta span { color: var(--color-coral); font-size: 1.1rem; }
+.footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, .12); color: #64748B; font-size: .78rem; }
+.footer-status { display: inline-flex; align-items: center; gap: 7px; }
+.footer-status span { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #34D399; box-shadow: 0 0 0 4px rgba(52, 211, 153, .12); }
 
 @media (max-width: 767px) {
   .site-navbar { min-height: 64px; }
@@ -91,5 +106,8 @@ main .card { border: 1px solid var(--color-border); border-radius: 12px; box-sha
   .visual-card-front { left: 0; padding: 30px; }
   .feature-grid { grid-template-columns: 1fr; padding-bottom: 50px; }
   .content-header { padding-top: 50px; }
-  .site-footer .container { flex-direction: column; gap: 8px; }
+  .site-footer { padding-top: 38px; }
+  .footer-main { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
+  .footer-brand, .footer-contact { grid-column: 1 / -1; }
+  .footer-bottom { flex-direction: column; gap: 10px; }
 }
