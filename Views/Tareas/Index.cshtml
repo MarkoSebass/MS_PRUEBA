@@ -1,0 +1,123 @@
+@model IReadOnlyList<MsPrueba.Models.Tarea>
+
+@{
+    ViewData["Title"] = "Tareas";
+    var completadas = Model.Count(tarea => tarea.Completada);
+}
+
+<section class="tasks-header">
+    <div>
+        <span class="eyebrow">ESPACIO DE TRABAJO</span>
+        <h1>Mis tareas</h1>
+        <p>Organiza el siguiente paso y mantén visible el progreso del proyecto.</p>
+    </div>
+    <a class="btn btn-primary" asp-controller="Tareas" asp-action="Crear">
+        <span aria-hidden="true">+</span> Nueva tarea
+    </a>
+</section>
+
+@if (TempData["Mensaje"] is string mensaje)
+{
+    <div class="alert alert-success task-toast" role="status">
+        <span>@mensaje</span>
+        <button type="button" class="task-toast-close" aria-label="Cerrar mensaje">&times;</button>
+    </div>
+}
+
+<section class="task-summary" aria-label="Resumen de tareas">
+    <div>
+        <span class="summary-label">TOTAL</span>
+        <strong>@Model.Count</strong>
+        <span class="summary-detail">tareas en el tablero</span>
+    </div>
+    <div>
+        <span class="summary-label">COMPLETADAS</span>
+        <strong>@completadas</strong>
+        <span class="summary-detail">de @Model.Count avances</span>
+    </div>
+    <div>
+        <span class="summary-label">EN PROGRESO</span>
+        <strong>@(Model.Count - completadas)</strong>
+        <span class="summary-detail">próximos pasos</span>
+    </div>
+</section>
+
+<section class="task-list" aria-label="Lista de tareas">
+    <div class="task-list-heading">
+        <h2>Actividad reciente</h2>
+        <span>Datos de demostración</span>
+    </div>
+
+    @foreach (var tarea in Model)
+    {
+        <article class="task-row @(tarea.Completada ? "task-complete" : string.Empty)">
+            <form asp-controller="Tareas" asp-action="CambiarEstado" method="post" class="task-check-form">
+                <input type="hidden" name="id" value="@tarea.Id" />
+                <button class="task-check" type="submit" title="@(tarea.Completada ? "Marcar como pendiente" : "Marcar como completada")" aria-label="@(tarea.Completada ? "Marcar como pendiente" : "Marcar como completada"): @tarea.Titulo">
+                    @(tarea.Completada ? "✓" : "")
+                </button>
+            </form>
+            <div class="task-copy">
+                <h3>@tarea.Titulo</h3>
+                <p>@tarea.Descripcion</p>
+            </div>
+            <span class="task-status">@(tarea.Completada ? "Completada" : "Pendiente")</span>
+            <button class="task-delete" type="button" title="Eliminar tarea" data-bs-toggle="modal" data-bs-target="#eliminarTareaModal-@tarea.Id" aria-label="Eliminar tarea: @tarea.Titulo">Eliminar</button>
+            <button class="task-view" type="button" data-bs-toggle="modal" data-bs-target="#tareaModal-@tarea.Id" aria-label="Visualizar tarea: @tarea.Titulo">
+                Ver
+            </button>
+        </article>
+
+        <div class="modal fade" id="tareaModal-@tarea.Id" tabindex="-1" aria-labelledby="tareaModalLabel-@tarea.Id" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content task-modal">
+                    <div class="modal-header">
+                        <div>
+                            <span class="summary-label modal-kicker">DETALLE DE TAREA</span>
+                            <h2 class="modal-title" id="tareaModalLabel-@tarea.Id">@tarea.Titulo</h2>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="task-modal-description">@(string.IsNullOrWhiteSpace(tarea.Descripcion) ? "Esta tarea no tiene descripción." : tarea.Descripcion)</p>
+                        <div class="task-modal-meta">
+                            <span>Estado</span>
+                            <strong>@(tarea.Completada ? "Completada" : "Pendiente")</strong>
+                        </div>
+                        <div class="task-modal-meta">
+                            <span>Creada</span>
+                            <strong>@tarea.FechaCreacion.ToLocalTime().ToString("dd/MM/yyyy HH:mm")</strong>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="eliminarTareaModal-@tarea.Id" tabindex="-1" aria-labelledby="eliminarTareaModalLabel-@tarea.Id" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content task-modal">
+                    <div class="modal-header">
+                        <div>
+                            <span class="summary-label modal-kicker modal-kicker-danger">CONFIRMAR ACCIÓN</span>
+                            <h2 class="modal-title" id="eliminarTareaModalLabel-@tarea.Id">¿Eliminar tarea?</h2>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="task-modal-description">Se eliminará <strong>@tarea.Titulo</strong>. Esta acción no se puede deshacer.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancelar</button>
+                        <form asp-controller="Tareas" asp-action="Eliminar" method="post">
+                            <input type="hidden" name="id" value="@tarea.Id" />
+                            <button class="btn btn-danger" type="submit">Sí, eliminar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</section>
