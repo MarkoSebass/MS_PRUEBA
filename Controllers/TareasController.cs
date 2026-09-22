@@ -1,9 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using MsPrueba.Models;
+using MsPrueba.Services.Notifications;
 
 namespace MsPrueba.Controllers;
 
-public class TareasController : Controller
+public class TareasController(INotificationService notificationService) : Controller
 {
     private static readonly List<Tarea> Tareas =
     [
@@ -25,7 +26,7 @@ public class TareasController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Crear(Tarea tarea)
+    public async Task<IActionResult> Crear(Tarea tarea)
     {
         if (!ModelState.IsValid)
         {
@@ -35,6 +36,7 @@ public class TareasController : Controller
         tarea.Id = Tareas.Count == 0 ? 1 : Tareas.Max(item => item.Id) + 1;
         tarea.FechaCreacion = DateTime.UtcNow;
         Tareas.Add(tarea);
+        await notificationService.NotifyTaskCreatedAsync(tarea, HttpContext.RequestAborted);
 
         TempData["Mensaje"] = "La tarea se agregó correctamente.";
         return RedirectToAction(nameof(Index));

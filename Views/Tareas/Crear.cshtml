@@ -6,31 +6,38 @@
 
 <section class="content-header task-form-header">
     <span class="eyebrow">NUEVO REGISTRO</span>
-    <h1>Crear tarea</h1>
-    <p>Agrega el siguiente paso de tu proyecto. Por ahora se conservará mientras la aplicación esté ejecutándose.</p>
+    <h1>Da forma al<br /><span>siguiente paso.</span></h1>
+    <p>Una tarea bien definida mantiene el proyecto en movimiento.</p>
 </section>
 
-<section class="content-panel task-form-panel">
-    <form asp-controller="Tareas" asp-action="Crear" method="post">
-        <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+<section class="task-create-layout">
+    <div class="content-panel task-form-panel">
+        <form asp-controller="Tareas" asp-action="Crear" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
 
-        <div class="mb-3">
-            <label asp-for="Titulo" class="form-label">Título</label>
-            <input asp-for="Titulo" class="form-control" placeholder="Ej. Revisar la propuesta" autofocus />
-            <span asp-validation-for="Titulo" class="text-danger"></span>
-        </div>
+            <div class="mb-3">
+                <label asp-for="Titulo" class="form-label">Título</label>
+                <input asp-for="Titulo" class="form-control" placeholder="Ej. Revisar la propuesta" autofocus />
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+            </div>
 
-        <div class="mb-4">
-            <label asp-for="Descripcion" class="form-label">Descripción <span class="text-muted fw-normal">(opcional)</span></label>
-            <textarea asp-for="Descripcion" class="form-control" rows="5" placeholder="Describe qué necesitas completar..."></textarea>
-            <span asp-validation-for="Descripcion" class="text-danger"></span>
-        </div>
+            <div class="mb-4">
+                <label asp-for="Descripcion" class="form-label">Descripción <span class="text-muted fw-normal">(opcional)</span></label>
+                <textarea asp-for="Descripcion" class="form-control" rows="5" placeholder="Describe qué necesitas completar..."></textarea>
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
 
-        <div class="d-flex flex-wrap gap-2">
-            <button class="btn btn-primary" type="submit">Guardar tarea</button>
-            <a class="btn btn-outline-primary" asp-controller="Tareas" asp-action="Index">Cancelar</a>
-        </div>
-    </form>
+            <div class="d-flex flex-wrap gap-2">
+                <button class="btn btn-primary" type="submit">Guardar tarea</button>
+                <a class="btn btn-outline-primary" asp-controller="Tareas" asp-action="Index">Cancelar</a>
+            </div>
+        </form>
+    </div>
+    <aside class="task-create-aside">
+        <span class="dashboard-card-label">RECUERDA</span>
+        <strong>Lo simple<br />también avanza.</strong>
+        <p>Usa un título concreto y agrega el contexto necesario para retomarla sin perder tiempo.</p>
+    </aside>
 </section>
 
 @section Scripts {

@@ -1,0 +1,58 @@
+@page
+@model MsPrueba.Areas.Identity.Pages.Account.LoginModel
+@{
+    ViewData["Title"] = "Iniciar sesión";
+}
+
+<div class="auth-page">
+    <section class="auth-intro">
+        <span class="eyebrow">ACCESO AL SISTEMA</span>
+        <h1>Vuelve a poner<br /><span>las ideas en marcha.</span></h1>
+        <p>Ingresa a tu espacio de trabajo y continúa donde lo dejaste.</p>
+        <div class="auth-note">
+            <span class="auth-note-mark" aria-hidden="true">↗</span>
+            <span>Tu tablero te está esperando.</span>
+        </div>
+    </section>
+
+    <section class="auth-panel" aria-labelledby="login-title">
+        <div class="auth-panel-heading">
+            <span class="dashboard-card-label">BIENVENIDO DE NUEVO</span>
+            <h2 id="login-title">Iniciar sesión</h2>
+            <p>Usa tus datos para continuar.</p>
+        </div>
+
+        <form id="account" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger auth-validation" role="alert"></div>
+
+            <div class="auth-field">
+                <label asp-for="Input.Email"></label>
+                <input asp-for="Input.Email" class="form-control" autocomplete="username" placeholder="nombre@ejemplo.com" autofocus />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+
+            <div class="auth-field">
+                <div class="auth-label-row">
+                    <label asp-for="Input.Password"></label>
+                    <a asp-page="./ForgotPassword">¿La olvidaste?</a>
+                </div>
+                <input asp-for="Input.Password" class="form-control" autocomplete="current-password" placeholder="••••••••" />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-check auth-remember">
+                <input class="form-check-input" asp-for="Input.RememberMe" />
+                <label class="form-check-label" asp-for="Input.RememberMe"></label>
+            </div>
+
+            <button id="login-submit" type="submit" class="btn btn-primary auth-submit">Entrar al panel <span aria-hidden="true">↗</span></button>
+        </form>
+
+        <div class="auth-divider"><span>¿Aún no tienes cuenta?</span></div>
+        <a class="btn btn-outline-primary auth-register" asp-page="./Register">Crear una cuenta</a>
+    </section>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

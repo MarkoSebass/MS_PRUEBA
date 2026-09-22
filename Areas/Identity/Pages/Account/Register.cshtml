@@ -1,0 +1,56 @@
+@page
+@model MsPrueba.Areas.Identity.Pages.Account.RegisterModel
+@{
+    ViewData["Title"] = "Crear cuenta";
+}
+
+<div class="auth-page auth-page-register">
+    <section class="auth-intro">
+        <span class="eyebrow">NUEVO ESPACIO DE TRABAJO</span>
+        <h1>Empieza con una<br /><span>idea clara.</span></h1>
+        <p>Crea tu cuenta y organiza tus próximos pasos desde un solo lugar.</p>
+        <div class="auth-note auth-note-accent">
+            <span class="auth-note-mark" aria-hidden="true">+</span>
+            <span>Tu progreso empieza aquí.</span>
+        </div>
+    </section>
+
+    <section class="auth-panel" aria-labelledby="register-title">
+        <div class="auth-panel-heading">
+            <span class="dashboard-card-label">CREAR CUENTA</span>
+            <h2 id="register-title">Únete al espacio</h2>
+            <p>Completa tus datos para comenzar.</p>
+        </div>
+
+        <form id="registerForm" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger auth-validation" role="alert"></div>
+
+            <div class="auth-field">
+                <label asp-for="Input.Email"></label>
+                <input asp-for="Input.Email" class="form-control" autocomplete="username" placeholder="nombre@ejemplo.com" autofocus />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+
+            <div class="auth-field">
+                <label asp-for="Input.Password"></label>
+                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" placeholder="Mínimo 6 caracteres" />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+
+            <div class="auth-field">
+                <label asp-for="Input.ConfirmPassword"></label>
+                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" placeholder="Repite tu contraseña" />
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+
+            <button id="registerSubmit" type="submit" class="btn btn-primary auth-submit">Crear mi cuenta <span aria-hidden="true">↗</span></button>
+        </form>
+
+        <div class="auth-divider"><span>¿Ya tienes una cuenta?</span></div>
+        <a class="btn btn-outline-primary auth-register" asp-page="./Login">Iniciar sesión</a>
+    </section>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

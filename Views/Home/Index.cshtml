@@ -2,42 +2,47 @@
     ViewData["Title"] = "Inicio";
 }
 
-<section class="hero-section">
-    <div class="hero-copy">
-        <span class="eyebrow">ASP.NET MVC · ESPACIO DE TRABAJO</span>
-        <h1>Construye algo <span>importante.</span></h1>
-        <p>Una base moderna para crear tu aplicación, proteger tus usuarios y hacer crecer tus ideas.</p>
-        <div class="hero-actions">
-            <a class="btn btn-primary" asp-area="Identity" asp-page="/Account/Register">Crear cuenta</a>
-            <a class="btn btn-outline-primary" asp-area="Identity" asp-page="/Account/Login">Iniciar sesión</a>
-        </div>
+<section class="dashboard-heading">
+    <div>
+        <span class="eyebrow">PANEL DE CONTROL</span>
+        <h1>Todo tu trabajo,<br /><span>en un solo lugar.</span></h1>
+        <p>Consulta el estado del proyecto y convierte la siguiente idea en una tarea concreta.</p>
     </div>
-    <div class="hero-visual" aria-hidden="true">
-        <div class="visual-card visual-card-back"></div>
-        <div class="visual-card visual-card-front">
-            <span class="visual-label">PROGRESO</span>
-            <strong>01</strong>
-            <div class="progress"><div class="progress-bar" style="width: 72%"></div></div>
-            <small>Tu próximo gran paso</small>
-        </div>
+    <a class="btn btn-primary dashboard-main-action" asp-controller="Tareas" asp-action="Crear">
+        <span aria-hidden="true">+</span> Nueva tarea
+    </a>
+</section>
+
+<section class="dashboard-grid" aria-label="Resumen del sistema">
+    <a class="dashboard-card dashboard-card-primary" asp-controller="Tareas" asp-action="Index">
+        <span class="dashboard-card-icon" aria-hidden="true">→</span>
+        <span class="dashboard-card-label">GESTIONAR</span>
+        <strong>Tareas</strong>
+        <span>Revisa avances, pendientes y actividad reciente.</span>
+    </a>
+    <a class="dashboard-card dashboard-card-dark" asp-area="Identity" asp-page="/Account/Manage/Index">
+        <span class="dashboard-card-icon" aria-hidden="true">◌</span>
+        <span class="dashboard-card-label">CUENTA</span>
+        <strong>Tu perfil</strong>
+        <span>Administra tus datos y preferencias de acceso.</span>
+    </a>
+    <div class="dashboard-card dashboard-card-status">
+        <span class="dashboard-card-label">ESTADO DEL SISTEMA</span>
+        <div class="status-line"><span class="status-dot"></span><strong>Operativo</strong></div>
+        <span>Todo listo para continuar trabajando.</span>
     </div>
 </section>
 
-<section class="feature-grid" aria-label="Características">
-    <article class="feature-item">
-        <span class="feature-number">01</span>
-        <h2>Ordena tus ideas</h2>
-        <p>Un punto de partida claro para transformar conceptos en funcionalidades.</p>
-    </article>
-    <article class="feature-item feature-highlight">
-        <span class="feature-number">02</span>
-        <h2>Protege el acceso</h2>
-        <p>Identity ya está conectado para que puedas trabajar con cuentas reales.</p>
-    </article>
-    <article class="feature-item">
-        <span class="feature-number">03</span>
-        <h2>Crece sin límites</h2>
-        <p>La estructura MVC queda lista para agregar modelos, vistas y controladores.</p>
-    </article>
+<section class="dashboard-lower">
+    <div class="dashboard-brief">
+        <span class="eyebrow">FLUJO DE TRABAJO</span>
+        <h2>Un siguiente paso claro cambia el ritmo del proyecto.</h2>
+        <p>Registra una tarea, márcala al terminar y mantén el avance visible para todo el equipo.</p>
+        <a class="text-link" asp-controller="Tareas" asp-action="Index">Abrir tablero <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="dashboard-steps" aria-label="Flujo de trabajo">
+        <div class="dashboard-step"><span>01</span><strong>Captura</strong><small>Define el próximo objetivo.</small></div>
+        <div class="dashboard-step"><span>02</span><strong>Avanza</strong><small>Trabaja con una lista visible.</small></div>
+        <div class="dashboard-step"><span>03</span><strong>Completa</strong><small>Marca el resultado y sigue.</small></div>
+    </div>
 </section>
-</div>
