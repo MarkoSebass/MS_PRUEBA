@@ -553,14 +553,7 @@ a:hover {
 .auth-submit span {
   font-size: 1.15rem;
 }
-.auth-validation {
-  margin-bottom: 18px;
-  padding: 11px 13px;
-  border-radius: 8px;
-  border-left: 3px solid var(--color-coral);
-  background: #fff1f1;
-  font-size: 0.82rem;
-}
+
 .auth-divider {
   display: flex;
   align-items: center;
