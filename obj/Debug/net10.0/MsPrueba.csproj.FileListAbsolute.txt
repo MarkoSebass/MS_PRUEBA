@@ -333,7 +333,7 @@ C:\Users\DJUSTO\MS_PRUEBA\obj\Debug\net10.0\MsPrueba.sourcelink.json
 C:\Users\DJUSTO\MS_PRUEBA\obj\Debug\net10.0\MsPrueba.pdb
 C:\Users\DJUSTO\MS_PRUEBA\obj\Debug\net10.0\compressed\v7ts6ujiuq-{0}-7zfud5q10q-7zfud5q10q.gz
 C:\Users\DJUSTO\MS_PRUEBA\obj\Debug\net10.0\compressed\fvkvinf9rp-{0}-tdhvjmzhrs-tdhvjmzhrs.gz
-C:\Users\DJUSTO\MS_PRUEBA\obj\Debug\net10.0\compressed\rv2rmpyz15-{0}-dp72rij8uq-dp72rij8uq.gz
-C:\Users\DJUSTO\MS_PRUEBA\obj\Debug\net10.0\compressed\jluz6u0xtw-{0}-3c96kx0xfg-3c96kx0xfg.gz
 C:\Users\DJUSTO\MS_PRUEBA\obj\Debug\net10.0\compressed\z5s1ss5a0y-{0}-bhjvybdtj8-bhjvybdtj8.gz
 C:\Users\DJUSTO\MS_PRUEBA\obj\Debug\net10.0\compressed\5m0vthk97x-{0}-bhjvybdtj8-bhjvybdtj8.gz
+C:\Users\DJUSTO\MS_PRUEBA\obj\Debug\net10.0\compressed\jluz6u0xtw-{0}-xzxm2xrwr7-xzxm2xrwr7.gz
+C:\Users\DJUSTO\MS_PRUEBA\obj\Debug\net10.0\compressed\rv2rmpyz15-{0}-ylnrb9xc17-ylnrb9xc17.gz
