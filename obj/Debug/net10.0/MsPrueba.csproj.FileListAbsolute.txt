@@ -332,10 +332,8 @@ C:\Users\DJUSTO\AppData\Local\Temp\MsPruebaAuthBuild\app.db
 C:\Users\DJUSTO\AppData\Local\Temp\MsPruebaAuthBuild\MsPrueba.deps.json
 C:\Users\DJUSTO\AppData\Local\Temp\MsPruebaAuthBuild\MsPrueba.runtimeconfig.json
 C:\Users\DJUSTO\AppData\Local\Temp\MsPruebaAuthBuild\MsPrueba.dll
-C:\Users\DJUSTO\MS_PRUEBA\obj\Debug\net10.0\compressed\jluz6u0xtw-{0}-un9d32ngsy-un9d32ngsy.gz
 C:\Users\DJUSTO\MS_PRUEBA\bin\Debug\net10.0\MsPrueba.exe
 C:\Users\DJUSTO\MS_PRUEBA\bin\Debug\net10.0\MsPrueba.pdb
 C:\Users\DJUSTO\MS_PRUEBA\obj\Debug\net10.0\MsPrueba.sourcelink.json
 C:\Users\DJUSTO\MS_PRUEBA\obj\Debug\net10.0\MsPrueba.pdb
 C:\Users\DJUSTO\MS_PRUEBA\obj\Debug\net10.0\compressed\jluz6u0xtw-{0}-w3xqqdax75-w3xqqdax75.gz
-C:\Users\DJUSTO\MS_PRUEBA\obj\Debug\net10.0\compressed\jluz6u0xtw-{0}-eza9j4m5i6-eza9j4m5i6.gz
