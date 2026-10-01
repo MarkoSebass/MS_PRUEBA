@@ -343,9 +343,6 @@ a:hover {
   font-weight: 800;
   letter-spacing: 0.14em;
 }
-.dashboard-card-status .dashboard-card-label {
-  color: var(--color-teal);
-}
 .dashboard-card strong {
   margin-top: auto;
   font-size: 1.7rem;
@@ -492,9 +489,6 @@ a:hover {
 }
 .auth-panel-heading {
   margin-bottom: 28px;
-}
-.auth-panel-heading .dashboard-card-label {
-  color: var(--color-teal);
 }
 .auth-panel-heading h2 {
   margin: 12px 0 7px;
