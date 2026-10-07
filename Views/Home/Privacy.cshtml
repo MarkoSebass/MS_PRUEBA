@@ -2,185 +2,113 @@
     ViewData["Title"] = "Centro de Información";
 }
 
-<div class="hero-section">
-    <div class="hero-content">
-        <span class="eyebrow">📚 RECURSOS DEL SISTEMA</span>
-        <h1>@ViewData["Title"]</h1>
-        <p>
-            Encuentra tutoriales, documentación, recursos de ayuda e información
-            importante para aprovechar al máximo la plataforma.
-        </p>
-    </div>
+<div class="content-header">
+    <span class="eyebrow">RECURSOS Y AYUDA</span>
+
+    <h1>@ViewData["Title"]</h1>
+
+    <p>
+        Encuentra tutoriales, videos, documentación y recursos para aprovechar
+        al máximo todas las funcionalidades de la plataforma.
+    </p>
 </div>
 
-<div class="container-info">
+<div class="content-panel">
 
-    <div class="featured-card">
-        <div class="featured-text">
-            <h2>🎥 Video Tutorial Principal</h2>
-            <p>
-                Aprende las funcionalidades principales del sistema mediante un
-                video explicativo.
-            </p>
-            <a href="https://www.youtube.com" targetVer Video
-            </a>
-        </div>
+    <h2>🎥 Video Destacado</h2>
 
-        <div class="featured-image">
-            <imgs://picsum.photos/600/350
-        </div>
-    </div>
+    <p>
+        Descubre contenido multimedia directamente desde el sistema.
+    </p>
 
-    <div class="cards-grid">
-
-        <div class="info-card">
-            <div class="icon">📚</div>
-            <h3>Documentación</h3>
-            <p>
-                Consulta manuales y guías para resolver dudas rápidamente.
-            </p>
-        </div>
-
-        <div class="info-card">
-            <div class="icon">🎓</div>
-            <h3>Tutoriales</h3>
-            <p>
-                Aprende paso a paso a utilizar cada módulo del sistema.
-            </p>
-        </div>
-
-        <div class="info-card">
-            <div class="icon">🔒</div>
-            <h3>Seguridad</h3>
-            <p>
-                Información sobre protección de datos y buenas prácticas.
-            </p>
-        </div>
-
-        <div class="info-card">
-            <div class="icon">❓</div>
-            <h3>Preguntas Frecuentes</h3>
-            <p>
-                Encuentra respuestas a las consultas más comunes.
-            </p>
-        </div>
-
+    <div class="ratio ratio-16x9 mt-3">
+        <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="Rick Astley"
+            allowfullscreen>
+        </iframe>
     </div>
 
 </div>
 
-<style>
+<div class="dashboard-grid">
 
-    body {
-        background: #f5f7fb;
-    }
+    <div class="dashboard-card dashboard-card-primary">
+        <span class="dashboard-card-label">
+            DOCUMENTACIÓN
+        </span>
 
-    .hero-section {
-        background: linear-gradient(135deg, #0d6efd, #4f9dff);
-        color: white;
-        padding: 50px;
-        border-radius: 20px;
-        margin-bottom: 30px;
-        box-shadow: 0 10px 25px rgba(0,0,0,.15);
-    }
+        <strong>📚 Manuales</strong>
 
-    .eyebrow {
-        font-weight: bold;
-        letter-spacing: 2px;
-        opacity: .9;
-    }
+        <span>
+            Consulta documentación y guías de referencia.
+        </span>
+    </div>
 
-    .hero-section h1 {
-        margin-top: 10px;
-        font-size: 3rem;
-        font-weight: 700;
-    }
+    <div class="dashboard-card dashboard-card-dark">
+        <span class="dashboard-card-label">
+            TUTORIALES
+        </span>
 
-    .hero-section p {
-        font-size: 1.1rem;
-        max-width: 700px;
-    }
+        <strong>🎓 Aprendizaje</strong>
 
-    .container-info {
-        max-width: 1200px;
-        margin: auto;
-    }
+        <span>
+            Aprende mediante videos y ejemplos prácticos.
+        </span>
+    </div>
 
-    .featured-card {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        background: white;
-        border-radius: 20px;
-        padding: 25px;
-        margin-bottom: 30px;
-        box-shadow: 0 5px 15px rgba(0,0,0,.08);
-    }
+    <div class="dashboard-card dashboard-card-status">
+        <span class="dashboard-card-label">
+            SEGURIDAD
+        </span>
 
-    .featured-text {
-        flex: 1;
-        min-width: 300px;
-    }
+        <div class="status-line">
+            <span class="status-dot"></span>
+            <strong>Protegido</strong>
+        </div>
 
-    .featured-image {
-        flex: 1;
-        min-width: 300px;
-    }
+        <span>
+            Información y buenas prácticas de seguridad.
+        </span>
+    </div>
 
-    .featured-image img {
-        width: 100%;
-        border-radius: 15px;
-        height: 100%;
-        object-fit: cover;
-    }
+</div>
 
-    .btn-custom {
-        display: inline-block;
-        margin-top: 15px;
-        background: #0d6efd;
-        color: white;
-        text-decoration: none;
-        padding: 12px 25px;
-        border-radius: 10px;
-        transition: .3s;
-    }
+<br />
 
-    .btn-custom:hover {
-        background: #0b5ed7;
-        color: white;
-    }
+<div class="task-list">
 
-    .cards-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-        gap: 20px;
-    }
+    <div class="task-list-heading">
+        <h2>Recursos Disponibles</h2>
+        <span>4 elementos</span>
+    </div>
 
-    .info-card {
-        background: white;
-        padding: 25px;
-        border-radius: 18px;
-        text-align: center;
-        box-shadow: 0 5px 15px rgba(0,0,0,.08);
-        transition: .3s;
-    }
+    <div class="task-row">
+        <div class="task-copy">
+            <h3>📖 Manual de Usuario</h3>
+            <p>Guía para utilizar correctamente el sistema.</p>
+        </div>
+    </div>
 
-    .info-card:hover {
-        transform: translateY(-8px);
-    }
+    <div class="task-row">
+        <div class="task-copy">
+            <h3>🎥 Tutorial en Video</h3>
+            <p>Aprende rápidamente las funcionalidades principales.</p>
+        </div>
+    </div>
 
-    .icon {
-        font-size: 3rem;
-        margin-bottom: 15px;
-    }
+    <div class="task-row">
+        <div class="task-copy">
+            <h3>🔒 Políticas de Seguridad</h3>
+            <p>Información relacionada con accesos y protección de datos.</p>
+        </div>
+    </div>
 
-    .info-card h3 {
-        color: #0d6efd;
-        margin-bottom: 10px;
-    }
+    <div class="task-row">
+        <div class="task-copy">
+            <h3>❓ Preguntas Frecuentes</h3>
+            <p>Respuestas a las consultas más comunes de los usuarios.</p>
+        </div>
+    </div>
 
-    .info-card p {
-        color: #6c757d;
-    }
-
-</style>
+</div>
