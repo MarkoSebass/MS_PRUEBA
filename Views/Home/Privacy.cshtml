@@ -1,14 +1,54 @@
 ﻿@{
-    ViewData["Title"] = "Privacidad";
+    ViewData["Title"] = "Centro de Información";
 }
 
-<section class="content-header">
-    <span class="eyebrow">INFORMACIÓN</span>
+<section class="content-header text-center">
+    <span class="eyebrow">📺 CONTENIDO MULTIMEDIA</span>
     <h1>@ViewData["Title"]</h1>
-    <p>En este espacio podrás documentar cómo se recopilan, utilizan y protegen los datos de las personas usuarias.</p>
+    <p>
+        Descubre información importante sobre nuestra plataforma mediante
+        videos, guías y recursos interactivos.
+    </p>
 </section>
 
 <div class="content-panel">
-    <h2>Tu política comienza aquí</h2>
-    <p>Personaliza este contenido con las reglas y procesos específicos de tu aplicación antes de publicarla.</p>
+
+    <div class="video-container">
+        <iframe width="100%"
+                height="500"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                title="Video informativo"
+                frameborder="0"
+                allowfullscreen>
+        </iframe>
+    </div>
+
+    <div class="info-cards">
+        <div class="card">
+            <h>
+        </div>
+
+        <div class="card">
+            <h3>📚 Recursos</h3>
+            <p>
+                Encuentra documentación, tutoriales y material de apoyo.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🔒 Seguridad</h3>
+            <p>
+                Conoce cómo protegemos tu información y garantizamos tu privacidad.
+            </p>
+        </div>
+    </div>
+
 </div>
+
+<style>
+    .content-header {
+        margin-bottom: 30px;
+    }
+
+    .content-header .eyebrow {
+        color
