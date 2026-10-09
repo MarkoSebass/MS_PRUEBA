@@ -1263,3 +1263,20 @@ main .card {
     gap: 10px;
   }
 }
+.card {
+    border-radius: 16px;
+    transition: all .3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,.12) !important;
+}
+
+.list-group-item:hover {
+    background: #f8f9fa;
+}
+
+.badge {
+    border-radius: 10px;
+}

@@ -2,112 +2,149 @@
     ViewData["Title"] = "Centro de Información";
 }
 
-<div class="content-header">
-    <span class="eyebrow">RECURSOS Y AYUDA</span>
+<div class="container py-4">
 
-    <h1>@ViewData["Title"]</h1>
+    <!-- Encabezado -->
+    <div class="text-center mb-5">
+        <span class="badge bg-primary px-3 py-2 mb-3">
+            RECURSOS Y AYUDA
+        </span>
 
-    <p>
-        Encuentra tutoriales, videos, documentación y recursos para aprovechar
-        al máximo todas las funcionalidades de la plataforma.
-    </p>
-</div>
+        <h1 class="fw-bold display-5">
+            @ViewData["Title"]
+        </h1>
 
-<div class="content-panel">
-
-    <h2>🎥 Video Destacado</h2>
-
-    <p>
-        Descubre contenido multimedia directamente desde el sistema.
-    </p>
-
-    <div class="ratio ratio-16x9 mt-3">
-        <iframe
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            title="Rick Astley"
-            allowfullscreen>
-        </iframe>
+        <p class="text-muted col-lg-8 mx-auto">
+            Encuentra tutoriales, videos, documentación y recursos para aprovechar
+            al máximo todas las funcionalidades de la plataforma.
+        </p>
     </div>
 
-</div>
+    <!-- Video -->
+    <div class="card shadow-sm border-0 mb-5">
+        <div class="card-body p-4">
 
-<div class="dashboard-grid">
+            <h3 class="fw-bold mb-3">
+                🎥 Video Destacado
+            </h3>
 
-    <div class="dashboard-card dashboard-card-primary">
-        <span class="dashboard-card-label">
-            DOCUMENTACIÓN
-        </span>
+            <p class="text-muted">
+                Descubre contenido multimedia directamente desde el sistema.
+            </p>
 
-        <strong>📚 Manuales</strong>
+            <div class="ratio ratio-16x9 rounded overflow-hidden">
+                <iframe
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Video Tutorial"
+                    allowfullscreen>
+                </iframe>
+            </div>
 
-        <span>
-            Consulta documentación y guías de referencia.
-        </span>
-    </div>
-
-    <div class="dashboard-card dashboard-card-dark">
-        <span class="dashboard-card-label">
-            TUTORIALES
-        </span>
-
-        <strong>🎓 Aprendizaje</strong>
-
-        <span>
-            Aprende mediante videos y ejemplos prácticos.
-        </span>
-    </div>
-
-    <div class="dashboard-card dashboard-card-status">
-        <span class="dashboard-card-label">
-            SEGURIDAD
-        </span>
-
-        <div class="status-line">
-            <span class="status-dot"></span>
-            <strong>Protegido</strong>
-        </div>
-
-        <span>
-            Información y buenas prácticas de seguridad.
-        </span>
-    </div>
-
-</div>
-
-<br />
-
-<div class="task-list">
-
-    <div class="task-list-heading">
-        <h2>Recursos Disponibles</h2>
-        <span>4 elementos</span>
-    </div>
-
-    <div class="task-row">
-        <div class="task-copy">
-            <h3>📖 Manual de Usuario</h3>
-            <p>Guía para utilizar correctamente el sistema.</p>
         </div>
     </div>
 
-    <div class="task-row">
-        <div class="task-copy">
-            <h3>🎥 Tutorial en Video</h3>
-            <p>Aprende rápidamente las funcionalidades principales.</p>
+    <!-- Tarjetas -->
+    <div class="row g-4 mb-5">
+
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                    <span class="badge bg-primary mb-2">
+                        DOCUMENTACIÓN
+                    </span>
+
+                    <h5>📚 Manuales</h5>
+
+                    <p class="text-muted mb-0">
+                        Consulta documentación y guías de referencia.
+                    </p>
+                </div>
+            </div>
         </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                    <span class="badge bg-dark mb-2">
+                        TUTORIALES
+                    </span>
+
+                    <h5>🎓 Aprendizaje</h5>
+
+                    <p class="text-muted mb-0">
+                        Aprende mediante videos y ejemplos prácticos.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                    <span class="badge bg-success mb-2">
+                        SEGURIDAD
+                    </span>
+
+                    <h5>
+                        <span class="text-success">●</span>
+                        Protegido
+                    </h5>
+
+                    <p class="text-muted mb-0">
+                        Información y buenas prácticas de seguridad.
+                    </p>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <div class="task-row">
-        <div class="task-copy">
-            <h3>🔒 Políticas de Seguridad</h3>
-            <p>Información relacionada con accesos y protección de datos.</p>
-        </div>
-    </div>
+    <!-- Recursos -->
+    <div class="card border-0 shadow-sm">
+        <div class="card-header bg-white py-3">
 
-    <div class="task-row">
-        <div class="task-copy">
-            <h3>❓ Preguntas Frecuentes</h3>
-            <p>Respuestas a las consultas más comunes de los usuarios.</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">
+                    Recursos Disponibles
+                </h4>
+
+                <span class="badge bg-secondary">
+                    4 Elementos
+                </span>
+            </div>
+
+        </div>
+
+        <div class="list-group list-group-flush">
+
+            <div class="list-group-item p-4">
+                <h5>📖 Manual de Usuario</h5>
+                <p class="text-muted mb-0">
+                    Guía para utilizar correctamente el sistema.
+                </p>
+            </div>
+
+            <div class="list-group-item p-4">
+                <h5>🎥 Tutorial en Video</h5>
+                <p class="text-muted mb-0">
+                    Aprende rápidamente las funcionalidades principales.
+                </p>
+            </div>
+
+            <div class="list-group-item p-4">
+                <h5>🔒 Políticas de Seguridad</h5>
+                <p class="text-muted mb-0">
+                    Información relacionada con accesos y protección de datos.
+                </p>
+            </div>
+
+            <div class="list-group-item p-4">
+                <h5>❓ Preguntas Frecuentes</h5>
+                <p class="text-muted mb-0">
+                    Respuestas a las consultas más comunes de los usuarios.
+                </p>
+            </div>
+
         </div>
     </div>
 
