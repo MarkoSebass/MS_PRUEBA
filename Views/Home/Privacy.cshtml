@@ -2,53 +2,113 @@
     ViewData["Title"] = "Centro de Información";
 }
 
-<section class="content-header text-center">
-    <span class="eyebrow">📺 CONTENIDO MULTIMEDIA</span>
+<div class="content-header">
+    <span class="eyebrow">RECURSOS Y AYUDA</span>
+
     <h1>@ViewData["Title"]</h1>
+
     <p>
-        Descubre información importante sobre nuestra plataforma mediante
-        videos, guías y recursos interactivos.
+        Encuentra tutoriales, videos, documentación y recursos para aprovechar
+        al máximo todas las funcionalidades de la plataforma.
     </p>
-</section>
+</div>
 
 <div class="content-panel">
 
-    <div class="video-container">
-        <iframe width="100%"
-                height="500"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title="Video informativo"
-                frameborder="0"
-                allowfullscreen>
+    <h2>🎥 Video Destacado</h2>
+
+    <p>
+        Descubre contenido multimedia directamente desde el sistema.
+    </p>
+
+    <div class="ratio ratio-16x9 mt-3">
+        <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="Rick Astley"
+            allowfullscreen>
         </iframe>
-    </div>
-
-    <div class="info-cards">
-        <div class="card">
-            <h>
-        </div>
-
-        <div class="card">
-            <h3>📚 Recursos</h3>
-            <p>
-                Encuentra documentación, tutoriales y material de apoyo.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>🔒 Seguridad</h3>
-            <p>
-                Conoce cómo protegemos tu información y garantizamos tu privacidad.
-            </p>
-        </div>
     </div>
 
 </div>
 
-<style>
-    .content-header {
-        margin-bottom: 30px;
-    }
+<div class="dashboard-grid">
 
-    .content-header .eyebrow {
-        color
+    <div class="dashboard-card dashboard-card-primary">
+        <span class="dashboard-card-label">
+            DOCUMENTACIÓN
+        </span>
+
+        <strong>📚 Manuales</strong>
+
+        <span>
+            Consulta documentación y guías de referencia.
+        </span>
+    </div>
+
+    <div class="dashboard-card dashboard-card-dark">
+        <span class="dashboard-card-label">
+            TUTORIALES
+        </span>
+
+        <strong>🎓 Aprendizaje</strong>
+
+        <span>
+            Aprende mediante videos y ejemplos prácticos.
+        </span>
+    </div>
+
+    <div class="dashboard-card dashboard-card-status">
+        <span class="dashboard-card-label">
+            SEGURIDAD
+        </span>
+
+        <div class="status-line">
+            <span class="status-dot"></span>
+            <strong>Protegido</strong>
+        </div>
+
+        <span>
+            Información y buenas prácticas de seguridad.
+        </span>
+    </div>
+
+</div>
+
+<br />
+
+<div class="task-list">
+
+    <div class="task-list-heading">
+        <h2>Recursos Disponibles</h2>
+        <span>4 elementos</span>
+    </div>
+
+    <div class="task-row">
+        <div class="task-copy">
+            <h3>📖 Manual de Usuario</h3>
+            <p>Guía para utilizar correctamente el sistema.</p>
+        </div>
+    </div>
+
+    <div class="task-row">
+        <div class="task-copy">
+            <h3>🎥 Tutorial en Video</h3>
+            <p>Aprende rápidamente las funcionalidades principales.</p>
+        </div>
+    </div>
+
+    <div class="task-row">
+        <div class="task-copy">
+            <h3>🔒 Políticas de Seguridad</h3>
+            <p>Información relacionada con accesos y protección de datos.</p>
+        </div>
+    </div>
+
+    <div class="task-row">
+        <div class="task-copy">
+            <h3>❓ Preguntas Frecuentes</h3>
+            <p>Respuestas a las consultas más comunes de los usuarios.</p>
+        </div>
+    </div>
+
+</div>
