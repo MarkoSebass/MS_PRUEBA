@@ -1,0 +1,80 @@
+@{
+    ViewData["Title"] = "Búsqueda";
+}
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+        <span class="badge bg-primary px-3 py-2 mb-3">
+            HERRAMIENTA DE CONSULTA
+        </span>
+
+        <h1 class="display-4 fw-bold">
+            🔎 Búsqueda
+        </h1>
+
+        <p class="text-muted">
+            Encuentra rápidamente información dentro del sistema.
+        </p>
+    </div>
+
+    <div class="card shadow border-0">
+        <div class="card-body p-4">
+
+            <h4 class="mb-4">
+                Realizar búsqueda
+            </h4>
+
+            <form>
+                <div class="input-group input-group-lg">
+                    <input type="text"
+                           class="form-control"
+                           placeholder="Buscar tareas, usuarios o información...">
+
+                    <button class="btn btn-primary" type="submit">
+                        Buscar
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="row mt-5 g-4">
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <h5>📋 Tareas</h5>
+                    <p class="text-muted mb-0">
+                        Busca tareas registradas y consulta su estado.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <h5>👤 Usuarios</h5>
+                    <p class="text-muted mb-0">
+                        Encuentra información relacionada con usuarios.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <h5>📚 Recursos</h5>
+                    <p class="text-muted mb-0">
+                        Busca documentación, guías y recursos disponibles.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

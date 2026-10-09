@@ -43,3 +43,19 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+.card {
+    border-radius: 18px;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    transition: 0.3s;
+}
+
+.input-group .form-control {
+    border-radius: 12px 0 0 12px;
+}
+
+.input-group .btn {
+    border-radius: 0 12px 12px 0;
+}
